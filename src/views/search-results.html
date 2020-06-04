@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt_br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar um ponto de coleta</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/search-results.css">
-    <link rel="stylesheet" href="/styles/responsive.css">
-   
-    
-</head>
-<body>
+{% extends "layout.html" %}
+{% set pageId = "page-search-results" %}
 
-    <div id="page-search-results">
+{% block title %}
+    <title>Resultados da pesquisa</title>
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/search-results.css">
+{% endblock styles %}
+
+{% block content %}
         <div class="content">
-            <header>
-                <img src="/assets/icones/logo.svg" alt="Logomarca">
-                <a href="/index.html">
-                    <span></span>
-                    Voltar para home
-                </a>
-            </header>
+            {% include "partials/page-header.html" %}
             <main>
                 <h3>
                     <strong>2 pontos</strong> encontrados
@@ -51,8 +41,5 @@
                 </div>
             </main>
         </div>
-    </div>
+{% endblock content %}
 
-    <script src="/scripts/create-point.js"></script>
-</body>
-</html>

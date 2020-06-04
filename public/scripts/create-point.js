@@ -1,15 +1,15 @@
 function populateUFs() {
     const ufSelect = document.querySelector("select[name=uf]")
-    
+
     fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
-    .then((res) => { return res.json()})
-    .then((states) => {
-        for (state of states) {
-            ufSelect.innerHTML += `<option value="${state.id}">${state.nome}</option>`
-        }
-        console.log('uf select '+ufSelect)
-    })
-    
+        .then((res) => { return res.json() })
+        .then((states) => {
+            for (state of states) {
+                ufSelect.innerHTML += `<option value="${state.id}">${state.nome}</option>`
+            }
+
+        })
+
 }
 
 
@@ -29,21 +29,21 @@ function getCities(event) {
     citySelect.innerHTML = ""
     citySelect.disabled = true
     fetch(url)
-    .then((res) => { return res.json()})
-    .then((cities) => {
-        
-        for (city of cities) {
-            citySelect.innerHTML += `<option value="${city.nome}">${city.nome}</option>`
-        }
-        citySelect.disabled = false
-    })
-    
-    citySelect.value.sort((a,b) => a.value < b.value ? -1 : a.value > b.value ? 1 : 0) //sort cities in alphabetical order
+        .then((res) => { return res.json() })
+        .then((cities) => {
+
+            for (city of cities) {
+                citySelect.innerHTML += `<option value="${city.nome}">${city.nome}</option>`
+            }
+            citySelect.disabled = false
+        })
+
+    citySelect.value.sort((a, b) => a.value < b.value ? -1 : a.value > b.value ? 1 : 0) //sort cities in alphabetical order
 }
 
 document
-.querySelector("select[name=uf]")
-.addEventListener("change", getCities) 
+    .querySelector("select[name=uf]")
+    .addEventListener("change", getCities)
 
 // items collected
 const itemsToColect = document.querySelectorAll(".items-grid li")
@@ -73,7 +73,6 @@ function handleSelectedItem(event) {
         // if element isn't selected yet, add to selection
         selectedItems.push(itemId)
     }
-    console.log(selectedItems)
 
     //update hidden element with selected items
     collectedItems.value = selectedItems

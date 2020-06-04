@@ -20,14 +20,13 @@ body::after {
 
 
 #page-search-results header {
-    margin-top: 48px;
-
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 #page-search-results header a {
+    margin-top: 48px;
     color: var(--title-color);
     font-weight: bold;
     display: flex;
