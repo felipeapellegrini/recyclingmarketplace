@@ -1,11 +1,16 @@
+body {
+    background-color: white;
+}
+
 body::after {
     content: "";
-    position: fixed;
-    background: white;
-    top: 260px;
+    position: absolute;
+    background: #f0f0f5;
+    top: 0;
     right: 0;
     left: 0;
     bottom: 0;
+    height: 16rem;
     z-index: -1;
 }
 
@@ -44,7 +49,7 @@ main {
     margin: 48px;
 }
 
-main h3 {
+main h4 {
     font-weight: normal;
     font-family: "Roboto", sans-serif;
     margin-bottom: 32px;

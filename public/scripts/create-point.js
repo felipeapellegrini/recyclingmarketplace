@@ -11,8 +11,6 @@ function populateUFs() {
         })
 
 }
-
-
 populateUFs()
 
 function getCities(event) {
@@ -71,7 +69,7 @@ function handleSelectedItem(event) {
         selectedItems = filteredItems
     } else {
         // if element isn't selected yet, add to selection
-        selectedItems.push(itemId)
+        selectedItems.push(itemId);
     }
 
     //update hidden element with selected items
